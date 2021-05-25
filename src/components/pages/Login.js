@@ -24,6 +24,7 @@ function Login() {
         device_type: "web",
         player_id: "",
       },
+      role: "patient",
       user: {
         email: username,
         password: password,

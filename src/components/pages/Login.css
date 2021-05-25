@@ -1,0 +1,72 @@
+.login {
+  height: 90vh;
+  text-align: center;
+  color: var(--primary);
+  margin-top: 2rem;
+}
+.login > img {
+  height: 75px;
+  width: 210px;
+}
+.login > form {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  margin: 0 auto;
+}
+.login > h1 {
+  margin: 1rem 0;
+  font-weight: 300;
+}
+.information {
+  color: gray;
+  font-size: x-small;
+  margin-bottom: 1rem;
+  line-height: normal;
+}
+.login > h2 {
+  margin: 1rem 0;
+  font-weight: 100;
+  margin-right: auto;
+}
+.login .login-error-wrapper {
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+}
+.login > form > .input {
+  margin: 1rem 0 !important;
+  border-radius: 1rem;
+}
+.login > .MuiSvgIcon-root {
+  font-size: 10rem;
+}
+.login > form button {
+  width: 50%;
+  margin: 1rem auto !important;
+  padding: 1rem;
+  margin-right: 50rem;
+  border-radius: 3rem;
+  font-weight: 800;
+}
+.login .already-account {
+  color: #000000a6;
+  margin-bottom: 25px;
+}
+.login .already-account a:active {
+  color: var(--primary);
+}
+/* .login > form > a > button {
+  width: 50%;
+  margin: 1rem 0 !important;
+  padding: 1rem;
+  margin-right: 50rem;
+  border-radius: 3rem;
+  font-weight: 800;
+} */
+
+@media screen and (max-width: 768px) {
+  .login > form {
+    width: 23rem;
+  }
+}

@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Login from "./components/pages/Login";
+import Signup from "./components/pages/Signup";
+import Home from "./components/pages/Home";
+import Navbar from "./components/common/Navbar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const state = useSelector((state) => state);
+  const verifyToken = localStorage.getItem("token");
+  if (state.isLoggedIn || verifyToken) {
+    return (
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <Switch>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+          <Route exact path="*">
+            <Login />
+          </Route>
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
